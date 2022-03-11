@@ -16,8 +16,8 @@ public class Main {
 		String tableName = "employees";
 
 		try {
-			database = (Database) Class.forName("ro.ase.cts.nosql.MongoDB").getDeclaredConstructor().newInstance();
-//			database = (Database) Class.forName("ro.ase.cts.sql.SqliteDB").getDeclaredConstructor().newInstance();
+//			database = (Database) Class.forName("ro.ase.cts.nosql.MongoDB").getDeclaredConstructor().newInstance();
+			database = (Database) Class.forName("ro.ase.cts.sql.SqliteDB").getDeclaredConstructor().newInstance();
 			var connection = database.connectToDB();
 			database.createTable(connection, tableName);
 			database.insertData(connection, tableName, employees);
